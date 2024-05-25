@@ -1,31 +1,27 @@
-// "use client";
+"use client";
 import React from "react";
 import "../globals.css";
 
 const Introduction = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center md:justify-between p-8">
-      <div className="md:w-1/2 md:mr-4">
-        <h1 className="text-3xl font-bold mb-4">About Me</h1>
-        <p className="text-lg">
-          Insert your bio here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales augue vitae dui porta dignissim. Nullam nec velit quis
-          libero commodo suscipit. Integer ac convallis odio.
-        </p>
+    <section id="introduction" className="p-8 bg-white pt-16">
+      <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+        <div className="md:w-1/2">
+          <h1 className="text-4xl font-bold mb-4 text-primary">About Me</h1>
+          <p className="text-lg text-gray-700">
+            I'm a passionate developer with expertise in creating dynamic and user-friendly web applications. My journey in software development started with a
+            strong interest in coding and problem-solving, which has driven me to continuously learn and improve my skills.
+          </p>
+          <p className="text-lg text-gray-700 mt-4">
+            I specialize in full-stack development using the MERN stack (MongoDB, Express.js, React, and Node.js) along with other modern technologies like
+            React Native, Nest.js, and Docker. I'm always eager to take on new challenges and contribute to innovative projects.
+          </p>
+        </div>
+        <div className="md:w-1/2 flex justify-center">
+          <img src="/profile-picture.jpg" alt="Profile Picture" className="w-64 h-64 rounded-t-full shadow-lg object-cover" />
+        </div>
       </div>
-      {/* <div className="md:w-1/2">
-        <img src="/profile-picture.jpg" alt="Profile Picture" className="w-full md:w-64 rounded-lg shadow-lg" />
-      </div> */}
-      {/* <div className="md:w-1/2 relative">
-        <div className="profile-picture-clip"></div>
-        <img src="/profile-picture.jpg" alt="Profile Picture" className="w-full md:w-64 rounded-lg shadow-lg absolute top-0 left-0" />
-      </div> */}
-      <div className="md:w-1/2 relative">
-        <img src="/profile-picture.jpg" alt="Profile Picture" className="w-full md:w-64 rounded-t-full shadow-lg" />
-      </div>
-      {/* <div className="md:w-1/2 relative">
-        <img src="/profile-picture.jpg" alt="Profile Picture" className="w-full md:w-64 rounded-lg shadow-lg" />
-      </div> */}
-    </div>
+    </section>
   );
 };
 
