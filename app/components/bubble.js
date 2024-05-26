@@ -2,11 +2,17 @@ import React, { useRef, useEffect, useState } from "react";
 
 const Canvas = ({ particlesCount, data }) => {
   const canvasRef = useRef(null);
-  const [dimensions, setDimensions] = useState({ width: window.innerWidth - 100, height: window.innerHeight / 2 });
+  const [dimensions, setDimensions] = useState({
+    width: window.innerWidth - 64,
+    height: window.innerHeight / 2 - 64,
+  });
 
   useEffect(() => {
     const handleResize = () => {
-      setDimensions({ width: window.innerWidth, height: window.innerHeight });
+      setDimensions({
+        width: window.innerWidth - 64,
+        height: window.innerHeight / 2 - 64,
+      });
     };
 
     window.addEventListener("resize", handleResize);
@@ -17,14 +23,15 @@ const Canvas = ({ particlesCount, data }) => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
 
+    const particleSize = 80;
+    const radius = particleSize / 2;
+
     const particles = data.map((skill) => {
-      // const svgString = renderToStaticMarkup(skill.icon);
       const img = new Image();
-      // img.src = `data:image/svg+xml;base64,${btoa(svgString)}`;
-      img.src = `${skill.icon}`;
+      img.src = skill.icon;
       return {
-        x: Math.random() * dimensions.width,
-        y: Math.random() * dimensions.height,
+        x: Math.random() * (dimensions.width - particleSize),
+        y: Math.random() * (dimensions.height - particleSize),
         img,
         velocityX: (Math.random() - 0.5) * 2,
         velocityY: (Math.random() - 0.5) * 2,
@@ -32,26 +39,23 @@ const Canvas = ({ particlesCount, data }) => {
     });
 
     const drawParticle = (particle) => {
-      const radius = 40; // Half of the image size to make it round
-      const size = 80; // Size of the image
-
-      context.save(); // Save the current state
+      context.save();
       context.beginPath();
       context.arc(particle.x + radius, particle.y + radius, radius, 0, Math.PI * 2, true);
       context.closePath();
       context.clip();
 
-      context.drawImage(particle.img, particle.x, particle.y, size, size);
+      context.drawImage(particle.img, particle.x, particle.y, particleSize, particleSize);
 
-      context.restore(); // Restore the previous state
+      context.restore();
     };
 
     const updateParticle = (particle) => {
       particle.x += particle.velocityX;
       particle.y += particle.velocityY;
 
-      if (particle.x < 0 || particle.x > dimensions.width) particle.velocityX *= -1;
-      if (particle.y < 0 || particle.y > dimensions.height) particle.velocityY *= -1;
+      if (particle.x < 0 || particle.x + particleSize > dimensions.width) particle.velocityX *= -1;
+      if (particle.y < 0 || particle.y + particleSize > dimensions.height) particle.velocityY *= -1;
     };
 
     const animate = () => {

@@ -137,7 +137,9 @@ const Skills = () => {
         {/* <Bubble text="Hello, I am a bubble!" /> */}
         {/* <div> */}
         {/* <Canvas particlesCount={majorSkills.length} data={majorSkills} /> */}
+        {/* <div className="bg-gray-700"> */}
         <DynamicBubbleComponent particlesCount={majorSkills.length} data={majorSkills} />
+        {/* </div> */}
 
         {/* </div> */}
       </div>
