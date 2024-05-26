@@ -1,28 +1,13 @@
 "use client";
-// components/Header.js
-
 import React, { useState, useEffect } from "react";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        // Adjust this value based on your preference
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setScrolled(window.scrollY > 0);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -30,28 +15,28 @@ const Header = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed w-full z-10 transition-all duration-1000 ${
-        // Changed duration to 1000ms for slower transition
-        isScrolled ? "bg-blue-600 text-white shadow-lg" : "bg-transparent text-black"
-      }`}
-    >
-      <div className="flex justify-between items-center px-6 py-4">
-        <div className="text-xl font-bold">{/* My Profile */}</div>
+    <header className={`fixed w-full z-10 transition-colors duration-500 ${scrolled ? "bg-darker" : "bg-dark"}`}>
+      <div className="container mx-auto flex justify-between items-center p-6">
+        <div className="text-primary font-bold text-2xl"></div>
         <nav>
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-4 text-white">
             <li>
-              <button className="py-2 px-4 hover:bg-gray-700" onClick={() => scrollToSection("skills")}>
+              <button className="py-2 px-4 hover:text-primary" onClick={() => scrollToSection("introduction")}>
+                About
+              </button>
+            </li>
+            <li>
+              <button className="py-2 px-4 hover:text-primary" onClick={() => scrollToSection("skills")}>
                 Skills
               </button>
             </li>
             <li>
-              <button className="py-2 px-4 hover:bg-gray-700" onClick={() => scrollToSection("projects")}>
+              <button className="py-2 px-4 hover:text-primary" onClick={() => scrollToSection("projects")}>
                 Projects
               </button>
             </li>
             <li>
-              <button className="py-2 px-4 hover:bg-gray-700" onClick={() => scrollToSection("contact")}>
+              <button className="py-2 px-4 hover:text-primary" onClick={() => scrollToSection("contact")}>
                 Contact
               </button>
             </li>
@@ -60,6 +45,13 @@ const Header = () => {
       </div>
     </header>
   );
+};
+
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
 };
 
 export default Header;

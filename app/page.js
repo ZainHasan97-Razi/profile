@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Header from "./components/header";
 import Introduction from "./components/introduction";

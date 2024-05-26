@@ -1,12 +1,23 @@
-@keyframes rainbow {
-   0% {
-     color: red;
-   }
-   50% {
-     color: blue;
-   }
-   100% {
-     color: green;
-   }
- }
- 
+.skillsSection {
+  position: relative;
+  height: 100vh; /* Adjust height as needed */
+  overflow: hidden;
+  background-color: #1a1a1a; /* Dark background color */
+}
+
+/* src/Bubble.css */
+.bubble {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Light shadow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.bubble:hover {
+  transform: scale(1.1);
+}
