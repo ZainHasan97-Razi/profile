@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import { renderToStaticMarkup } from "react-dom/server";
 
 const Canvas = ({ particlesCount, data }) => {
   const canvasRef = useRef(null);

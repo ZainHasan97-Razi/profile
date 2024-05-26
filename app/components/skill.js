@@ -72,8 +72,11 @@ import React from "react";
 import { FaNodeJs, FaReact, FaJs } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiReact, SiNestjs, SiFirebase, SiRedis, SiSocketdotio, SiTypescript } from "react-icons/si";
 import styles from "../css/skill.css"; // Import the CSS module
-import BubbleImg from "../../public/bubble.jpg";
-import Canvas from "./bubble";
+import dynamic from "next/dynamic";
+// import Canvas from "./bubble";
+const DynamicBubbleComponent = dynamic(() => import("./bubble"), {
+  ssr: false,
+});
 
 const BubbleImg2 = require("../../public/bubble.jpg");
 
@@ -133,7 +136,9 @@ const Skills = () => {
         ))} */}
         {/* <Bubble text="Hello, I am a bubble!" /> */}
         {/* <div> */}
-        <Canvas particlesCount={majorSkills.length} data={majorSkills} />
+        {/* <Canvas particlesCount={majorSkills.length} data={majorSkills} /> */}
+        <DynamicBubbleComponent particlesCount={majorSkills.length} data={majorSkills} />
+
         {/* </div> */}
       </div>
     </section>

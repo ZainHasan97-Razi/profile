@@ -39,7 +39,7 @@ const Introduction = () => {
       </div>
       <div className="container mx-auto p-8 pr-64">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Hi, my name is <span className="text-primary">Zain Hasan</span>.
+          Hi, I am <span className="text-primary">Zain Hasan</span>.
         </h1>
         <h2 className="text-2xl md:text-4xl font-semibold mb-4">I build applications on MERN</h2>
         <p className="text-lg md:text-xl">
