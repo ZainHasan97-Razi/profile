@@ -69,8 +69,6 @@
 // export default Skills;
 
 import React from "react";
-import { FaNodeJs, FaReact, FaJs } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiReact, SiNestjs, SiFirebase, SiRedis, SiSocketdotio, SiTypescript } from "react-icons/si";
 import styles from "../css/skill.css"; // Import the CSS module
 import dynamic from "next/dynamic";
 const DynamicBubbleComponent = dynamic(() => import("./bubble"), {
@@ -107,26 +105,49 @@ const majorSkills = [
   { name: "TypeScript", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/768px-Typescript_logo_2020.svg.png" },
 ];
 
+const allSkills = [
+  "MongoDB",
+  "Node.js",
+  "Express.js",
+  "Nest.js",
+  "Worker threads",
+  "React.js",
+  "Redux",
+  "React Native",
+  "Web3",
+  "Socket.io",
+  "Microservice",
+  "Redis",
+  "Docker",
+  "Firebase",
+  "Push Notification",
+  "Authentication",
+  "AWS",
+  "AZURE",
+  "Jenkins",
+];
+
 const Skills = () => {
   return (
-    <section id="skills" className={`${styles.skillsSection} p-8 bg-dark text-white relative`}>
+    <section id="skills" className={`${styles.skillsSection} pl-8 pr-8 pb-8 bg-dark text-white relative`}>
       <h2 className="text-3xl font-bold mb-8 text-center text-primary">Skills</h2>
       <div className={styles.bubbles}>
-        {/* {majorSkills.map((skill, index) => (
-          <div key={index} className={styles.bubble} style={{ top: `${Math.random() * 80}%`, left: `${Math.random() * 80}%` }}>
-            {skill.icon}
-            <h3 className={styles.skillName}>{skill.name}</h3>
-          </div>
-        ))} */}
-        {/* <Bubble text="Hello, I am a bubble!" /> */}
-        {/* <div> */}
-        {/* <Canvas particlesCount={majorSkills.length} data={majorSkills} /> */}
-        {/* <div className="bg-gray-700"> */}
         <DynamicBubbleComponent particlesCount={majorSkills.length} data={majorSkills} />
-        {/* </div> */}
-
-        {/* </div> */}
       </div>
+      <p className="mb-4 text-center">
+        {allSkills.map((v, i) => {
+          if (i % 10 == 0) {
+            return (
+              <>
+                <br />
+                {i + 1 == allSkills.length ? v : v + " | "}
+              </>
+            );
+          } else {
+            return i + 1 == allSkills.length ? v : v + " | ";
+          }
+        })}
+      </p>
     </section>
   );
 };

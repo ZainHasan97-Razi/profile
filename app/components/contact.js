@@ -46,6 +46,12 @@ const Contact = () => {
       <h2 className="text-3xl font-bold mb-8 text-center text-primary">Contact</h2>
       <div className="flex flex-col items-center space-y-4">
         <div className="flex items-center space-x-4">
+          <FaGithub size={30} className="text-[#000000]" />
+          <a href="https://github.com/ZainHasan97-Razi/" target="_blank" className="text-lg text-primary hover:text-green-400 transition duration-300">
+            GitHub
+          </a>
+        </div>
+        <div className="flex items-center space-x-4">
           <FaLinkedin size={30} className="text-[#0762C8]" />
           <a
             href="https://www.linkedin.com/in/zain-hasan-7410761b4/"
@@ -53,12 +59,6 @@ const Contact = () => {
             className="text-lg text-primary hover:text-green-400 transition duration-300"
           >
             LinkedIn
-          </a>
-        </div>
-        <div className="flex items-center space-x-4">
-          <FaGithub size={30} className="text-[#000000]" />
-          <a href="https://github.com/ZainHasan97-Razi/" target="_blank" className="text-lg text-primary hover:text-green-400 transition duration-300">
-            GitHub
           </a>
         </div>
         <div className="flex items-center space-x-4">
