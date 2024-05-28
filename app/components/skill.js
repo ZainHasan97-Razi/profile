@@ -73,12 +73,9 @@ import { FaNodeJs, FaReact, FaJs } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiReact, SiNestjs, SiFirebase, SiRedis, SiSocketdotio, SiTypescript } from "react-icons/si";
 import styles from "../css/skill.css"; // Import the CSS module
 import dynamic from "next/dynamic";
-// import Canvas from "./bubble";
 const DynamicBubbleComponent = dynamic(() => import("./bubble"), {
   ssr: false,
 });
-
-const BubbleImg2 = require("../../public/bubble.jpg");
 
 // const majorSkills = [
 //   { name: "MongoDB", icon: <SiMongodb size={40} /> },
@@ -109,19 +106,6 @@ const majorSkills = [
   },
   { name: "TypeScript", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/768px-Typescript_logo_2020.svg.png" },
 ];
-
-const Bubble = ({ text }) => {
-  // return <div className="bubble">{text}</div>;
-  return (
-    // <div style={{ width: `100px`, height: `100px`, backgroundColor: `red` }}>
-    <img
-      src="https://toppng.com/uploads/preview/ocean-bubbles-png-svg-transparent-download-under-the-sea-bubbles-clipart-11562928382fmhcep3eps.png"
-      alt="Bubble"
-      style={{ width: `100px`, height: "auto", backgroundColor: "none" }}
-    />
-    // </div>
-  );
-};
 
 const Skills = () => {
   return (
