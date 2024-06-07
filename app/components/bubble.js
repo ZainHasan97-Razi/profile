@@ -7,6 +7,10 @@ const Canvas = ({ particlesCount, data }) => {
     height: window.innerHeight / 2 - 64,
   });
 
+  const isMobileView = React.useMemo(() => {
+    return window.innerWidth < 768;
+  }, []);
+
   useEffect(() => {
     const handleResize = () => {
       setDimensions({
@@ -23,7 +27,7 @@ const Canvas = ({ particlesCount, data }) => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
 
-    const particleSize = 80;
+    const particleSize = isMobileView ? 50 : 80;
     const radius = particleSize / 2;
 
     const particles = data.map((skill) => {
