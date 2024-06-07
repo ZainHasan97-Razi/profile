@@ -75,18 +75,6 @@ const DynamicBubbleComponent = dynamic(() => import("./bubble"), {
   ssr: false,
 });
 
-// const majorSkills = [
-//   { name: "MongoDB", icon: <SiMongodb size={40} /> },
-//   { name: "Node.js", icon: <FaNodeJs size={40} /> },
-//   { name: "React.js", icon: <FaReact size={40} /> },
-//   { name: "React Native", icon: <SiReact size={40} /> },
-//   { name: "Nest.js", icon: <SiNestjs size={40} /> },
-//   { name: "Socket.io", icon: <SiSocketdotio size={40} /> },
-//   { name: "Redis", icon: <SiRedis size={40} /> },
-//   { name: "JavaScript", icon: <FaJs size={40} /> },
-//   { name: "TypeScript", icon: <SiTypescript size={40} /> },
-// ];
-
 const majorSkills = [
   { name: "MongoDB", icon: "/mongodb.png" },
   { name: "Node.js", icon: "/node.png" },
