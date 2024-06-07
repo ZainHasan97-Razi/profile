@@ -88,21 +88,15 @@ const DynamicBubbleComponent = dynamic(() => import("./bubble"), {
 // ];
 
 const majorSkills = [
-  { name: "MongoDB", icon: "https://static.stocktitan.net/company-logo/mdb.png" },
-  { name: "Node.js", icon: "https://miro.medium.com/v2/resize:fit:800/1*v2vdfKqD4MtmTSgNP0o5cg.png" },
-  { name: "React.js", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/1200px-React_Logo_SVG.svg.png" },
-  {
-    name: "React Native",
-    icon: "https://www.openxcell.com/wp-content/uploads/2021/11/reactnative-inner.svg",
-  },
-  { name: "Nest.js", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NestJS.svg/1200px-NestJS.svg.png" },
-  { name: "Socket.io", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/1024px-Socket-io.svg.png" },
-  { name: "Redis", icon: "https://logowik.com/content/uploads/images/redis.jpg" },
-  {
-    name: "JavaScript",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-  },
-  { name: "TypeScript", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/768px-Typescript_logo_2020.svg.png" },
+  { name: "MongoDB", icon: "/mongodb.png" },
+  { name: "Node.js", icon: "/node.png" },
+  { name: "React.js", icon: "/react.png" },
+  { name: "React Native", icon: "/react-native.png" },
+  { name: "Nest.js", icon: "/nest.png" },
+  { name: "Socket.io", icon: "/socket.png" },
+  { name: "Redis", icon: "/redis.jpg" },
+  { name: "JavaScript", icon: "/javascript.png" },
+  { name: "TypeScript", icon: "/typescript.png" },
 ];
 
 const allSkills = [
