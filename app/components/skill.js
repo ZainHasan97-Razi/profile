@@ -15,6 +15,7 @@ const majorSkills = [
   { name: "Redis", icon: "/redis.jpg" },
   { name: "JavaScript", icon: "/javascript.png" },
   { name: "TypeScript", icon: "/typescript.png" },
+  { name: "Next.js", icon: "/next.png" },
 ];
 
 const allSkills = [
@@ -22,13 +23,14 @@ const allSkills = [
   "Node.js",
   "Express.js",
   "Nest.js",
-  "Worker threads",
+  "Next.js",
   "React.js",
   "Redux",
   "React Native",
   "Web3",
   "Socket.io",
   "Microservice",
+  "Worker threads",
   "Redis",
   "Docker",
   "Firebase",
