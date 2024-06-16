@@ -17,6 +17,7 @@ const majorSkills = [
   { name: "TypeScript", icon: "/typescript.png" },
   { name: "Next.js", icon: "/next.png" },
 ];
+// Used for icons
 
 const allSkills = [
   "MongoDB",
