@@ -51,6 +51,20 @@ const projects = [
     link: "https://play.google.com/store/apps/details?id=com.primefit",
   },
   {
+    title: "Lacrosse statistician application",
+    description: "The scope of this application is to guide and assist coaches of laccrose to record and manage game stats of teams and players.",
+    features: [
+      "Teams and Players management",
+      "Admin panel to manage user subscriptions and users",
+      "Game clock",
+      "Stats tracking, stats management, game files",
+      "Schedule game and game results",
+      "Authentication",
+    ],
+    tech: "React Native, Redux, React Native animations",
+    link: "https://play.google.com/store/apps/details?id=com.flathman",
+  },
+  {
     title: "Ecommerce application",
     description:
       "The scope of these multiple applications that I have worked on is to provide categorized products to select items to its cart and place order to their address.",
